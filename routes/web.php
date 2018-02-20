@@ -15,5 +15,8 @@
 //    return view('welcome');
 //});
 
-Route::get('/', ['uses' => 'HomeController@index', 'as' => 'home']);
+//Route::get('/', ['uses' => 'HomeController@index', 'as' => 'home']);
 
+Route::get('/', ['uses' => 'PostsController@index', 'as' => 'index']);
+Route::get('/posts/create', ['uses' => 'PostsController@create', 'as' => 'create']);
+Route::post('/posts', ['uses' => 'PostsController@store', 'as' => 'store']);
